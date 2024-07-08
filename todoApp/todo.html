@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>  
+    <title>Todo list</title>
+</head>
+<body>
+<style>
+#main-head{
+    text-align: center;
+}
+
+
+</style>
+
+    <h1 id="main-head">Todo List</h1>
+    <input id="todo-input" type="text" placeholder="Enter TODO List">
+    <button onclick="add()">ADD</button>
+<p id="todo=items" onclick="add()" ></p>
+
+
+
+    <script>
+let todoList = [];
+
+function add(){
+    let inputElement = document.querySelector('#todo-input');
+    let todoItem =inputElement.value;
+    inputElement.value ='';
+    todoList.push(todoItem)
+    console.log(todoItem)    
+}
+ 
+function displayElements(){
+    let displayEle = document.querySelector('todo=items')
+    displayEle.innerHTML="";
+
+}
+
+    </script>
+</body>
+</html>

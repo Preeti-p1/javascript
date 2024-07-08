@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+#my_button{
+    height: 50px;
+    width: 150px;
+    border: 2px solid black;
+}
+.js-odd{
+    background-color: aqua;
+}
+.js-even{
+    background-color: rgb(255, 0, 200);
+}
+    </style>
+</head>
+
+<body>
+    <h2 id="greeting"></h2>
+    <button id="my_button" onclick="count()"></button>
+
+    <script>
+  let num =localStorage.getItem("num")||0;
+function count() {
+    num++;
+    localStorage.setItem("num",num)
+    updateButton()
+}
+function updateButton() {
+    let button = document.querySelector("#my_button");
+
+ button.innerHTML=num;
+ if(num%2===0){   
+button.classList.add("js-even")
+button.classList.remove("js-odd")
+ }else{
+    button.classList.add("js-odd")
+button.classList.remove("js-even")
+ }  
+}
+updateButton()
+
+        function greet(personName = "Dear") {
+            let date = new Date();
+            let hours = date.getHours();
+            //let hours=14;
+            let heading = document.querySelector("#greeting");
+            if (hours > 5 && hours < 12) {
+                heading.innerText = `Good Morning ${personName}`;
+            } else if (hours > 12 && hours < 19) {
+                heading.innerText = `Good Afternoon ${personName}`;
+            } else {
+                heading.innerText = `Good Night ${personName}`;
+            }
+        }
+        greet("Preeti")
+       
+    </script>
+</body>
+
+</html>

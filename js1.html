@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>javaScript</title>
+   
+</head>
+<body>
+    <style>
+        .bag{
+    
+          border-radius: 15px;
+          border: none;
+          background-color: aquamarine;
+
+        }
+        .Wishlist{
+            text-transform: uppercase;
+        }
+    </style>
+    <h1>javaScript</h1>
+    <button class="bag" onclick="cardQuantity=cardQuantity+1;
+    document.querySelector('#increase').innerText=`Your bag has ${cardQuantity} items`;">Add to Bag</button>
+    <button class="Wishlist"onclick="cardQuantity=cardQuantity-1;
+    document.querySelector('#increase').innerText=`Your bag has ${cardQuantity} items`;">Move to Wishlist</button>
+    <button class="bag" onclick="cardQuantity=cardQuantity+2;
+    document.querySelector('#increase').innerText=`Your bag has ${cardQuantity} items`;">Add 1+1 sale items</button>
+    <h1 id="increase"></h1>
+    <script>
+let cardQuantity=0;
+document.querySelector('#increase').innerText=`Your bag has ${cardQuantity} items`;
+    </script>   
+</body>
+</html>
